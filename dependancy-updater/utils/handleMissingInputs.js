@@ -1,5 +1,5 @@
-module.exports = (csv, pkg) => {
-	if ((csv && !pkg) || (!csv && pkg)) {
+module.exports = () => {
+	if ((flags.csv && !flags.package) || (!flags.csv && flags.package)) {
 		alert({
 			type: `error`,
 			name: `Args Error`,

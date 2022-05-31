@@ -1,5 +1,7 @@
-module.exports = (csv, pkg) => {
-	if (csv.substr(csv.length - 4) !== '.csv') {
+const alert = require('cli-alerts');
+
+module.exports = () => {
+	if (flags.csv.substr(flags.csv.length - 4) !== '.csv') {
 		alert({
 			type: `error`,
 			name: `Args Error`,
