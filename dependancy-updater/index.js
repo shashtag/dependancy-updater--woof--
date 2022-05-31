@@ -9,11 +9,10 @@
 
 const init = require('./utils/init');
 const cli = require('./utils/cli');
-const log = require('./utils/log');
 const alert = require('cli-alerts');
-let path = require('path');
-let fs = require('fs');
-let { parse } = require('csv-parse');
+const handleInputErrors = require('./utils/handleInputError');
+const getCsvData = require('./utils/getCsvData');
+const handleMissingInputs = require('./utils/handleMissingInputs');
 
 const input = cli.input;
 const flags = cli.flags;
@@ -24,35 +23,9 @@ const { clear, debug } = flags;
 	input.includes(`help`) && cli.showHelp(0);
 
 	if (flags.csv && flags.package) {
-		if (flags.csv.substr(flags.csv.length - 4) !== '.csv') {
-			alert({
-				type: `error`,
-				name: `Args Error`,
-				msg: `Enter a file with .csv extension`
-			});
-		}
-		const csvpath = path.join(process.cwd(), flags.csv);
+		handleInputErrors(flags.csv, flags.package);
 		const csvData = [];
-		fs.createReadStream(csvpath)
-			.pipe(
-				parse({
-					columns: true,
-					delimiter: [';', ',', ' ', '\t', '|'],
-					bom: true
-				})
-			)
-			.on('data', dataRow => {
-				csvData.push(dataRow);
-			})
-			.on('end', () => console.table(csvData));
+		getCsvData(csvData, flags.csv);
 	}
-
-	if ((flags.csv && !flags.package) || (!flags.csv && flags.package)) {
-		alert({
-			type: `error`,
-			name: `Args Error`,
-			msg: `Add both csv file using flag '-c' and package using flag '-p'`
-		});
-	}
-	debug && log(flags);
+	handleMissingInputs(flags.csv, flags.package);
 })();

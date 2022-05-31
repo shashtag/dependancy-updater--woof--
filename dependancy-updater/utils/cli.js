@@ -14,12 +14,6 @@ const flags = {
 		alias: `nc`,
 		desc: `Don't clear the console`
 	},
-	debug: {
-		type: `boolean`,
-		default: false,
-		alias: `d`,
-		desc: `Print debug info`
-	},
 	version: {
 		type: `boolean`,
 		alias: `v`,
