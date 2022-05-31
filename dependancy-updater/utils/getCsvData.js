@@ -1,9 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 const { parse } = require('csv-parse');
-const checkPkgJson = require('./checkPkgJson');
+const pkgJsonOperations = require('./pkgJsonOperations');
 const { flags } = require('./cli');
 const alert = require('cli-alerts');
+const loading = require('loading-cli');
 
 module.exports = () => {
 	const csvpath = path.join(process.cwd(), flags.csv);
@@ -36,19 +37,20 @@ module.exports = () => {
 			alert({
 				type: `info`,
 				name: `Input`,
-				msg: `Csv file uploaded by the user`
+				msg: `Csv file uploaded by the you`
 			});
 			console.table(csvData);
+			const load = loading('Performing operations').start();
 
 			for (let i = 0; i < csvData.length; i++) {
-				await checkPkgJson(
+				await pkgJsonOperations(
 					csvData[i].Repo,
 					inputPackageName,
 					inputPackageVersion,
 					i
 				);
 			}
-
+			load.stop();
 			alert({
 				type: `info`,
 				name: `Output`,
