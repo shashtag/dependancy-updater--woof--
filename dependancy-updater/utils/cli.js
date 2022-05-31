@@ -5,12 +5,13 @@ const flags = {
 	clear: {
 		type: `boolean`,
 		default: true,
-		alias: `c`,
+		alias: `cl`,
 		desc: `Clear the console`
 	},
 	noClear: {
 		type: `boolean`,
 		default: false,
+		alias: `nc`,
 		desc: `Don't clear the console`
 	},
 	debug: {
@@ -23,6 +24,21 @@ const flags = {
 		type: `boolean`,
 		alias: `v`,
 		desc: `Print CLI version`
+	},
+	csv: {
+		type: `string`,
+		alias: 'c',
+		desc: `Input the CSV file name`
+	},
+	package: {
+		type: `string`,
+		alias: `p`,
+		desc: `Input the package name`
+	},
+	update: {
+		type: `boolean`,
+		alias: `u`,
+		desc: `Update the packages and send a pull request`
 	}
 };
 
