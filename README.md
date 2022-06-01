@@ -32,7 +32,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Woof</h3>
+<h3 align="center">Wooff</h3>
 
   <p align="center">
     Cli tool to check and update dependencies.
@@ -120,11 +120,11 @@
 
 -   npm
     ```sh
-    npm install woof -g
+    npm install wooff -g
     ```
 -   yarn
     ```sh
-    yarn add woof -g
+    yarn add wooff -g
     ```
 
 *   Add sudo before the code if facing error due to system permissions
@@ -138,15 +138,15 @@
 
 ### Checking Installation
 
-To confirm if woof is installed
+To confirm if wooff is installed
 
 -   run
     ```sh
-    woof
+    wooff
     ```
 -   or
     ```sh
-    woof -v
+    wooff -v
     ```
 
 ### Entering Arguments
@@ -156,7 +156,7 @@ To confirm if woof is installed
 -   run
 
     ```sh
-    woof -c [CSV File Name].csv -p [Package Name]@[Package Version]
+    wooff -c [CSV File Name].csv -p [Package Name]@[Package Version]
     ```
 
     Enter your GitHub Personal Access Token in the prompt
@@ -165,7 +165,7 @@ To confirm if woof is installed
 
 -   example input
     ```sh
-    woof -c csv.csv -p axios@0.23.0
+    wooff -c csv.csv -p axios@0.23.0
     ```
 -   example output
     ![version-satisfaction]
@@ -177,12 +177,12 @@ Add the -u flag to send Pull requests to the repositories with updated package v
 -   run
 
     ```sh
-    woof -c [CSV File Name].csv -p [Package Name]@[Package Version] -u
+    wooff -c [CSV File Name].csv -p [Package Name]@[Package Version] -u
     ```
 
 -   example input
     ```sh
-    woof -c csv.csv -p axios@0.23.0 -u
+    wooff -c csv.csv -p axios@0.23.0 -u
     ```
 -   example output
     ![version-update]

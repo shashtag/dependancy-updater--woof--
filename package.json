@@ -1,12 +1,12 @@
 {
-	"name": "woof",
+	"name": "wooff",
 	"description": "Cli tool to check and update dependencies.",
 	"version": "0.0.1",
 	"license": "MIT",
 	"bin": {
 		"dependency-updater": "index.js",
 		"depend": "index.js",
-		"woof": "index.js"
+		"wooff": "index.js"
 	},
 	"author": {
 		"name": "Shashwat Gupta (Shashtag)",
