@@ -1,0 +1,45 @@
+{
+	"name": "wooff",
+	"description": "Cli tool to check and update dependencies.",
+	"version": "0.0.2",
+	"license": "MIT",
+	"bin": {
+		"dependency-updater": "index.js",
+		"depend": "index.js",
+		"wooff": "index.js"
+	},
+	"author": {
+		"name": "Shashwat Gupta (Shashtag)",
+		"email": "shashwatsatna@gmail.com",
+		"url": "https://github.com/shashtag"
+	},
+	"keywords": [
+		"dependency-updater",
+		"Shashwat Gupta (Shashtag)"
+	],
+	"files": [
+		"index.js",
+		"utils"
+	],
+	"scripts": {
+		"format": "prettier --write \"./**/*.{js,json}\""
+	},
+	"dependencies": {
+		"@octokit/core": "^3.6.0",
+		"chalk": "^4.1.2",
+		"cli-alerts": "^1.2.2",
+		"cli-handle-error": "^4.4.0",
+		"cli-handle-unhandled": "^1.1.1",
+		"cli-meow-help": "^3.1.0",
+		"cli-welcome": "^2.2.2",
+		"csv-parse": "^5.1.0",
+		"github-url-to-object": "^4.0.6",
+		"inquirer": "^8.2.4",
+		"loading-cli": "^1.1.0",
+		"meow": "^9.0.0",
+		"simple-git": "^3.7.1"
+	},
+	"devDependencies": {
+		"prettier": "^2.6.2"
+	}
+}
