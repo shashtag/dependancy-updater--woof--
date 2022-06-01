@@ -1,6 +1,6 @@
 {
 	"name": "dependency-updater",
-	"description": "Cli tool to update dependencies and related functionalities.",
+	"description": "Cli tool to check and update dependencies.",
 	"version": "0.0.1",
 	"license": "MIT",
 	"bin": {
