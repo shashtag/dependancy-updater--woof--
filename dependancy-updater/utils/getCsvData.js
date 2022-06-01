@@ -4,7 +4,6 @@ const { parse } = require('csv-parse');
 const pkgJsonOperations = require('./pkgJsonOperations');
 const { flags } = require('./cli');
 const alert = require('cli-alerts');
-const loading = require('loading-cli');
 
 module.exports = () => {
 	const csvpath = path.join(process.cwd(), flags.csv);
@@ -37,7 +36,7 @@ module.exports = () => {
 			});
 			console.table(csvData);
 
-			const load = loading('Performing operations').start();
+			load.start();
 			let k = 0;
 			for (let data of csvData) {
 				await pkgJsonOperations(
@@ -61,11 +60,10 @@ module.exports = () => {
 			} else {
 				alert({
 					type: `info`,
-					name: `PR sent`,
+					name: `PR Sent`,
 					msg: `Version of ${inputPackageName} in each package, their satisfaction and pull request url`
 				});
 				console.table(csvData);
 			}
-				
 		});
 };

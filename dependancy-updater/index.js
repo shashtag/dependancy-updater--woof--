@@ -14,6 +14,7 @@ const handleInputErrors = require('./utils/handleInputError');
 const getCsvData = require('./utils/getCsvData');
 const handleMissingInputs = require('./utils/handleMissingInputs');
 const { Octokit } = require('@octokit/core');
+const loading = require('loading-cli');
 
 global.csvData = [];
 global.flags = cli.flags;
@@ -22,6 +23,7 @@ global.octokit = new Octokit({
 });
 global.inputPackageName = '';
 global.inputPackageVersion = '';
+global.load = loading('Performing operations');
 
 const input = cli.input;
 const { clear, debug } = flags;

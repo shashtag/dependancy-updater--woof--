@@ -1,5 +1,4 @@
 const URL = require('url');
-const axios = require('axios');
 const GHurlToObj = require('github-url-to-object');
 const UpdateRepo = require('./UpdateRepo');
 
