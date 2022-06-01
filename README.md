@@ -86,7 +86,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/dyte-submissions/dyte-vit-2022-shashtag)
+[![Product Name Screen Shot][product-screenshot]](https://www.npmjs.com/package/wooff)
 
 * A fast, reliable way to check and update your dependencies in all your repositories.
 * Easy to install and use comman line interface.
@@ -257,7 +257,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Shashwat Gupta (shashtag) - [@ShashTagZero](https://twitter.com/ShashTagZero) - shashwatsatna@gmail.com
 
-Project Link: [https://github.com/dyte-submissions/dyte-vit-2022-shashtag](https://github.com/dyte-submissions/dyte-vit-2022-shashtag)
+Project Links: [https://github.com/dyte-submissions/dyte-vit-2022-shashtag](https://github.com/dyte-submissions/dyte-vit-2022-shashtag)<br/> [https://www.npmjs.com/package/wooff](https://www.npmjs.com/package/wooff)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
