@@ -5,8 +5,6 @@ const UpdateRepo = require('./UpdateRepo');
 
 module.exports = async (url, pkgname, ver, i) => {
 	let repoParts = GHurlToObj(url);
-	// console.log(repoParts);
-	// console.log(`${repoParts.api_url}/contents/package.json`);
 	try {
 		const response = await octokit.request(
 			`GET /repos/{owner}/{repo}/contents/package.json`,
@@ -26,6 +24,7 @@ module.exports = async (url, pkgname, ver, i) => {
 
 		pkgData.dependencies[pkgname] =
 			pkgData.dependencies[pkgname].substring(0, 1) + ver;
+
 		await UpdateRepo(isSatisfied, repoParts, i);
 	} catch (e) {
 		console.log(e);

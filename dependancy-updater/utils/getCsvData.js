@@ -38,22 +38,34 @@ module.exports = () => {
 			console.table(csvData);
 
 			const load = loading('Performing operations').start();
-
-			for (let i = 0; i < csvData.length; i++) {
+			let k = 0;
+			for (let data of csvData) {
 				await pkgJsonOperations(
-					csvData[i].Repo,
+					data.Repo,
 					inputPackageName,
 					inputPackageVersion,
-					i
+					k
 				);
+
+				k++;
 			}
 
 			load.stop();
-			alert({
-				type: `info`,
-				name: `Output`,
-				msg: `Version of ${inputPackageName} in each package and their satisfaction`
-			});
-			console.table(csvData);
+			if (!flags.update) {
+				alert({
+					type: `info`,
+					name: `Output`,
+					msg: `Version of ${inputPackageName} in each package and their satisfaction`
+				});
+				console.table(csvData);
+			} else {
+				alert({
+					type: `info`,
+					name: `PR sent`,
+					msg: `Version of ${inputPackageName} in each package, their satisfaction and pull request url`
+				});
+				console.table(csvData);
+			}
+				
 		});
 };
