@@ -1,3 +1,5 @@
+const alert = require('cli-alerts');
+
 module.exports = () => {
 	if ((flags.csv && !flags.package) || (!flags.csv && flags.package)) {
 		alert({

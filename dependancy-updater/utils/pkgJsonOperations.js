@@ -26,7 +26,7 @@ module.exports = async (url, pkgname, ver, i) => {
 
 		pkgData.dependencies[pkgname] =
 			pkgData.dependencies[pkgname].substring(0, 1) + ver;
-		await UpdateRepo(isSatisfied, repoParts);
+		await UpdateRepo(isSatisfied, repoParts, i);
 	} catch (e) {
 		console.log(e);
 	}

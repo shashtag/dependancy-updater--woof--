@@ -18,8 +18,10 @@ const { Octokit } = require('@octokit/core');
 global.csvData = [];
 global.flags = cli.flags;
 global.octokit = new Octokit({
-	auth: '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'
+	auth: ''
 });
+global.inputPackageName = '';
+global.inputPackageVersion = '';
 
 const input = cli.input;
 const { clear, debug } = flags;

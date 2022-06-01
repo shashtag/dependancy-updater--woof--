@@ -9,9 +9,6 @@ const loading = require('loading-cli');
 module.exports = () => {
 	const csvpath = path.join(process.cwd(), flags.csv);
 
-	let inputPackageName = '';
-	let inputPackageVersion = '';
-
 	let i = 0;
 	while (flags.package[i] !== '@') {
 		inputPackageName += flags.package[i++];
@@ -21,8 +18,7 @@ module.exports = () => {
 		inputPackageVersion += flags.package[i++];
 	}
 
-	return fs
-		.createReadStream(csvpath)
+	fs.createReadStream(csvpath)
 		.pipe(
 			parse({
 				columns: true,
@@ -40,6 +36,7 @@ module.exports = () => {
 				msg: `Csv file uploaded by the you`
 			});
 			console.table(csvData);
+
 			const load = loading('Performing operations').start();
 
 			for (let i = 0; i < csvData.length; i++) {
