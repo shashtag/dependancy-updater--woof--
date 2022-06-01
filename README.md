@@ -192,14 +192,23 @@ Add the -u flag to send Pull requests to the repositories with updated package v
 ## Miscellaneous Screenshots
 
 - loading
+<br/>
 ![loading]
 
 - error handling
+<br/>
+
 ![error1]
+
+<br/>
 
 ![error2]
 
+<br/>
+
 ![error3]
+
+<br/>
 
 ![error4]
 
