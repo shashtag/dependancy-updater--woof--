@@ -34,7 +34,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Dependency Updater</h3>
+<h3 align="center">Woof</h3>
 
   <p align="center">
     Cli tool to check and update dependencies.
@@ -79,7 +79,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](./images/dogo.jpeg)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -112,13 +112,14 @@
 
 * npm
   ```sh
-  sudo npm install dependency-updater -g
+  npm install woof -g
   ```
 * yarn
   ```sh
-  sudo yarn add dependency-updater -g
+  yarn add woof -g
   ```
-[Enter system password in the prompt]
+- Add sudo before the code if facing error due to system permissions
+- Enter system password if prompted
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
