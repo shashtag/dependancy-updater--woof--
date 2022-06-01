@@ -168,6 +168,7 @@ To confirm if wooff is installed
     wooff -c csv.csv -p axios@0.23.0
     ```
 -   example output
+    <br>
     ![version-satisfaction]
 
 ### Updating Repos
@@ -185,33 +186,26 @@ Add the -u flag to send Pull requests to the repositories with updated package v
     wooff -c csv.csv -p axios@0.23.0 -u
     ```
 -   example output
+    <br>
     ![version-update]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Miscellaneous Screenshots
 
-- loading
-<br/>
+-   loading
+    <br/> 
+    ![loading]
 
-![loading]
-
-- error handling
-<br/>
-
-![error1]
-
-<br/>
-
-![error2]
-
-<br/>
-
-![error3]
-
-<br/>
-
-![error4]
+-   error handling
+    <br/>
+    ![error1] 
+    <br/>
+    ![error2]
+    <br/>
+    ![error3]
+    <br/>
+    ![error4]
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
