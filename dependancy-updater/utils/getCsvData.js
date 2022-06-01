@@ -50,6 +50,7 @@ module.exports = () => {
 					i
 				);
 			}
+
 			load.stop();
 			alert({
 				type: `info`,

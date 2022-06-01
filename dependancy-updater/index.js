@@ -13,9 +13,13 @@ const cli = require('./utils/cli');
 const handleInputErrors = require('./utils/handleInputError');
 const getCsvData = require('./utils/getCsvData');
 const handleMissingInputs = require('./utils/handleMissingInputs');
+const { Octokit } = require('@octokit/core');
 
 global.csvData = [];
 global.flags = cli.flags;
+global.octokit = new Octokit({
+	auth: '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'
+});
 
 const input = cli.input;
 const { clear, debug } = flags;

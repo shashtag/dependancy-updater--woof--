@@ -2,25 +2,63 @@ const { flags } = require('./cli');
 const fs = require('fs');
 const path = require('path');
 const simpleGit = require('simple-git');
+const { execSync } = require('child_process');
 simpleGit().clean(simpleGit.CleanOptions.FORCE);
 
-module.exports = (isSatisfied, jsonData, i) => {
+module.exports = async (isSatisfied, repoParts) => {
 	const git = simpleGit();
 	if (flags.update && !isSatisfied) {
 		console.log(__dirname);
-		const localPath = path.join(__dirname, 'TempRepoFolder');
-		const pkgPath = path.join(localPath, 'package.json');
+		const localDir = path.join(__dirname, 'TempRepoFolder');
 		try {
-			if (!fs.existsSync(localPath)) {
-				fs.mkdirSync(localPath);
-			}
-			git.clone(csvData[i].Repo, localPath, {
-				'--no-checkout': true
-			})
-				.cwd({ path: localPath, root: true })
-				.checkout({ '-b': 'aaa' });
+			const fork = await octokit.request(
+				'POST /repos/{owner}/{repo}/forks',
+				{
+					owner: repoParts.user,
+					repo: repoParts.repo
+				}
+			);
 
-			fs.writeFileSync(pkgPath, JSON.stringify(jsonData, null, 2));
+			git.exec(() => {
+				if (!fs.existsSync(localDir)) {
+					fs.mkdirSync(localDir);
+				}
+			})
+				.clone(fork.data.html_url, localDir, {
+					'--no-checkout': true
+				})
+				.cwd({ path: localDir, root: true })
+				.reset('mixed')
+				.checkout('package.json')
+				.checkout('package-lock.json')
+				.checkout('.gitignore')
+				.exec(() =>
+					execSync(`npm install ${flags.package}`, {
+						cwd: localDir
+					})
+				)
+				.add(['package.json', 'package-lock.json'])
+				.commit('test')
+				.push()
+				.exec(async () => {
+					process.chdir(localDir);
+					console.log(process.cwd());
+					try {
+						const response = await octokit.request(
+							`POST /repos/{owner}/{repo}/pulls`,
+							{
+								owner: repoParts.user,
+								repo: repoParts.repo,
+								title: 'sss',
+								body: 'sss',
+								head: 'shashtag:main',
+								base: 'main'
+							}
+						);
+					} catch (e) {
+						console.log(e);
+					}
+				});
 		} catch (err) {
 			console.error(err);
 		}

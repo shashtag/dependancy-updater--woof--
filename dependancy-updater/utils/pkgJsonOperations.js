@@ -5,10 +5,15 @@ const UpdateRepo = require('./UpdateRepo');
 
 module.exports = async (url, pkgname, ver, i) => {
 	let repoParts = GHurlToObj(url);
+	// console.log(repoParts);
 	// console.log(`${repoParts.api_url}/contents/package.json`);
 	try {
-		const response = await axios.get(
-			`${repoParts.api_url}/contents/package.json`
+		const response = await octokit.request(
+			`GET /repos/{owner}/{repo}/contents/package.json`,
+			{
+				owner: repoParts.user,
+				repo: repoParts.repo
+			}
 		);
 
 		const pkgData = JSON.parse(
@@ -21,7 +26,7 @@ module.exports = async (url, pkgname, ver, i) => {
 
 		pkgData.dependencies[pkgname] =
 			pkgData.dependencies[pkgname].substring(0, 1) + ver;
-		UpdateRepo((isSatisfied = false), pkgData, i);
+		await UpdateRepo(isSatisfied, repoParts);
 	} catch (e) {
 		console.log(e);
 	}
