@@ -29,9 +29,10 @@ const { clear, debug } = flags;
 (async () => {
 	init({ clear });
 	input.includes(`help`) && cli.showHelp(0);
-	await inputGhPat();
+
 	if (flags.csv && flags.package) {
 		handleInputErrors();
+		await inputGhPat();
 		getCsvData();
 	}
 	handleMissingInputs();

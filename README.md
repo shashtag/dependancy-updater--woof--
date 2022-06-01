@@ -1,4 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7947212&assignment_repo_type=AssignmentRepo)
+
 <div id="top"></div>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -8,8 +9,6 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -18,14 +17,13 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -50,8 +48,6 @@
   </p>
 </div>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -65,98 +61,148 @@
     <li>
       <a href="#installation">Installation</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li>
+          <a href="#markdown-header-checking-installation">Checking Installation</a>
+        </li>
+        <li>
+          <a href="#markdown-header-entering-arguments">Entering Arguments</a>
+        </li>
+        <li>
+          <a href="#markdown-header-updating-repos">Updating Repos</a>
+        </li>
+      </ul>
+    </li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](./images/dogo.jpeg)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/dyte-submissions/dyte-vit-2022-shashtag)
+
+A fast, reliable way to...........
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
-* [Node.js](https://nodejs.org/en/)
-* [octokit.js](https://github.com/octokit/octokit.js)
-* [create-node-cli](https://www.npmjs.com/package/create-node-cli)
-* [chalk](https://www.npmjs.com/package/chalk)
-* [cli-alerts](https://www.npmjs.com/package/cli-alerts)
-* [cli-handle-unhandled](https://www.npmjs.com/package/cli-handle-error)
-* [cli-meow-help](https://www.npmjs.com/package/cli-meow-help)
-* [cli-welcome](https://www.npmjs.com/package/cli-welcome)
-* [csv-parse](https://www.npmjs.com/package/csv-parse)
-* [github-url-to-object](https://www.npmjs.com/package/github-url-to-object)
-* [inquirer](https://www.npmjs.com/package/inquirer)
-* [loading-cli](https://www.npmjs.com/package/loading-cli)
-* [meow](https://www.npmjs.com/package/meow)
-* [simple-git](https://www.npmjs.com/package/simple-git)
+-   [Node.js](https://nodejs.org/en/)
+-   [octokit.js](https://github.com/octokit/octokit.js)
+-   [create-node-cli](https://www.npmjs.com/package/create-node-cli)
+-   [chalk](https://www.npmjs.com/package/chalk)
+-   [cli-alerts](https://www.npmjs.com/package/cli-alerts)
+-   [cli-handle-unhandled](https://www.npmjs.com/package/cli-handle-error)
+-   [cli-meow-help](https://www.npmjs.com/package/cli-meow-help)
+-   [cli-welcome](https://www.npmjs.com/package/cli-welcome)
+-   [csv-parse](https://www.npmjs.com/package/csv-parse)
+-   [github-url-to-object](https://www.npmjs.com/package/github-url-to-object)
+-   [inquirer](https://www.npmjs.com/package/inquirer)
+-   [loading-cli](https://www.npmjs.com/package/loading-cli)
+-   [meow](https://www.npmjs.com/package/meow)
+-   [simple-git](https://www.npmjs.com/package/simple-git)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- INSTALLATION -->
 
 ## Installation
 
-* npm
-  ```sh
-  npm install woof -g
-  ```
-* yarn
-  ```sh
-  yarn add woof -g
-  ```
-- Add sudo before the code if facing error due to system permissions
-- Enter system password if prompted
+-   npm
+    ```sh
+    npm install woof -g
+    ```
+-   yarn
+    ```sh
+    yarn add woof -g
+    ```
 
+*   Add sudo before the code if facing error due to system permissions
+*   Enter system password if prompted
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
+### Checking Installation
 
+To confirm if woof is installed
+
+-   run
+    ```sh
+    woof
+    ```
+-   or
+    ```sh
+    woof -v
+    ```
+
+### Entering Arguments
+
+`cd` to the directory where the csv file is located
+
+-   run
+
+    ```sh
+    woof -c [CSV File Name].csv -p [Package Name]@[Package Version]
+    ```
+
+    Enter your GitHub Personal Access Token in the prompt
+    <br/>
+    <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Creating a Personal Access Token</a>
+
+-   example input
+    ```sh
+    woof -c csv.csv -p axios@0.23.0
+    ```
+-   example output
+    ![version-satisfaction]
+
+### Updating Repos
+
+Add the -u flag to send Pull requests to the repositories with updated package version
+
+-   run
+
+    ```sh
+    woof -c [CSV File Name].csv -p [Package Name]@[Package Version] -u
+    ```
+
+-   example input
+    ```sh
+    woof -c csv.csv -p axios@0.23.0 -u
+    ```
+-   example output
+    ![version-update]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
-- [ ] One time GitHub authentication
-- [ ] Automatic dependency checker
-    - [ ] Dependency update notifications
-    - [ ] Automatic Pull requests
-- [ ] Configuration options
+-   [ ] One time GitHub authentication
+-   [ ] Automatic dependency checker
+    -   [ ] Dependency update notifications
+    -   [ ] Automatic Pull requests
+-   [ ] Configuration options
+-   [ ] Allowing package@latest as argument
 
 See the [open issues](https://github.com/dyte-submissions/dyte-vit-2022-shashtag/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -166,41 +212,27 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
-Your Name - [@ShashTagZero](https://twitter.com/ShashTagZero) - shashwatsatna@gmail.com
+Shashwat Gupta (shashtag) - [@ShashTagZero](https://twitter.com/ShashTagZero) - shashwatsatna@gmail.com
 
 Project Link: [https://github.com/dyte-submissions/dyte-vit-2022-shashtag](https://github.com/dyte-submissions/dyte-vit-2022-shashtag)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/dyte-submissions/dyte-vit-2022-shashtag.svg?style=for-the-badge
 [contributors-url]: https://github.com/dyte-submissions/dyte-vit-2022-shashtag/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/dyte-submissions/dyte-vit-2022-shashtag.svg?style=for-the-badge
@@ -213,4 +245,6 @@ Project Link: [https://github.com/dyte-submissions/dyte-vit-2022-shashtag](https
 [license-url]: https://github.com/dyte-submissions/dyte-vit-2022-shashtag/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/shashtag
-<!-- [product-screenshot]: images/screenshot.png -->
+[product-screenshot]: images/dogo.jpeg
+[version-satisfaction]: images/version.png
+[version-update]: images/update.png
