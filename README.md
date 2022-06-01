@@ -162,6 +162,7 @@ To confirm if wooff is installed
     Enter your GitHub Personal Access Token in the prompt
     <br/>
     <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Creating a Personal Access Token</a>
+- [Example CSV File](https://github.com/dyte-submissions/dyte-vit-2022-shashtag/blob/main/Example/csv.csv)
 
 -   example input
     ```sh
@@ -180,6 +181,8 @@ Add the -u flag to send Pull requests to the repositories with updated package v
     ```sh
     wooff -c [CSV File Name].csv -p [Package Name]@[Package Version] -u
     ```
+
+- [Example CSV File](https://github.com/dyte-submissions/dyte-vit-2022-shashtag/blob/main/Example/csv.csv)
 
 -   example input
     ```sh
@@ -207,7 +210,7 @@ Add the -u flag to send Pull requests to the repositories with updated package v
 
     ![error3]
     <br/>
-    
+
     ![error4]
 
 
