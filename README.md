@@ -74,6 +74,7 @@
         </li>
       </ul>
     </li>
+    <li><a href="#markdown-header-miscellaneous-screenshots">Miscellaneous Screenshots</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -87,7 +88,10 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/dyte-submissions/dyte-vit-2022-shashtag)
 
-A fast, reliable way to...........
+* A fast, reliable way to check and update your dependencies in all your repositories.
+* Easy to install and use comman line interface.
+* Appealing UI.
+* Propper error messages and information prompts.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -185,6 +189,23 @@ Add the -u flag to send Pull requests to the repositories with updated package v
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Miscellaneous Screenshots
+
+- loading
+![loading]
+
+- error handling
+![error1]
+
+![error2]
+
+![error3]
+
+![error4]
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!-- ROADMAP -->
 
 ## Roadmap
@@ -248,3 +269,8 @@ Project Link: [https://github.com/dyte-submissions/dyte-vit-2022-shashtag](https
 [product-screenshot]: images/dogo.jpeg
 [version-satisfaction]: images/version.png
 [version-update]: images/update.png
+[loading]: images/loading.png
+[error1]: images/error1.png
+[error2]: images/error2.png
+[error3]: images/error3.png
+[error4]: images/error4.png

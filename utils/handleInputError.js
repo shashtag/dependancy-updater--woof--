@@ -15,7 +15,7 @@ module.exports = () => {
 		alert({
 			type: `error`,
 			name: `Args Error`,
-			msg: `Enter a correct package name name and version`
+			msg: `Enter a correct package name and version`
 		});
 		process.exit(1);
 	}
